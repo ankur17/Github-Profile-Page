@@ -3,20 +3,59 @@
  */
 
 import React , {Component} from 'react';
+// import {fetch as fetchPolyfill} from 'whatwg-fetch'
+import 'whatwg-fetch'
 
-class Left extends Component {
+class LeftPanel extends Component{
+
     constructor(props){
         super(props)
+        this.state = {
+            userData : {},
+            isFetchComplete : false
+        }
+
+        this.fetchUserData = this.fetchUserData.bind(this)
+    }
+
+    componentWillMount(){
+
+        this.fetchUserData()
+    }
+
+    fetchUserData(){
+        let user_url = "https://api.github.com/users/supreetsingh247"
+
+        fetch(user_url,{
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).then((response)=> {
+            return response.json()
+        }).then((result)=> {
+            this.setState({
+                ...result,
+                isFetchComplete: true
+            })
+        }).catch((ex)=>{
+            console.error("ERROR in fetching user data from API",ex)
+            this.setState({
+                userdata : {},
+                isFetchComplete: false
+            })
+        })
     }
 
     render(){
         return (
             <div className="leftContainer">
-                <p>I am in the left</p>
+                {renderer}
             </div>
         )
     }
 }
 
 
-export default Left;
+export default LeftPanel;
+

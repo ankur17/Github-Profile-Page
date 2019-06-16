@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+
 }
 
 .App-logo {
@@ -38,16 +38,17 @@
 .dataContainer{
   display : flex;
   background-color: red;
-  height: 400px;
   margin: 0;
   padding: 0 10%;
 }
 
 .leftContainer{
+  display: flex;
 
   width : 30%;
   height: 100%;
-  background-color: blue;
+  padding: 0 1%;
+  justify-content: center;
 }
 
 .rightContainer{
@@ -61,12 +62,13 @@
   background-color: pink;
 }
 
-@media only screen and (max-width : 768px) {
+@media only screen and (max-width : 800px) {
   .dataContainer{
     display : block;
   }
   .leftContainer{
     width : 100%;
+    overflow-y: hidden;
     background-color: orange;
   }
 
@@ -77,6 +79,8 @@
   }
 
 }
+
+
 
 
 /*
