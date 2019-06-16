@@ -56,13 +56,20 @@ class Dropdown extends Component {
 
     renderDataDropDown(item, index){
         const {value, label} = this.state.typeDropdown ? {value: index, label: item} : item
+        let display = null
+        if(this.state.labelItem == label){
+            display =  <a><span style={{color:"green",fontSize:20}}>&#10004;</span>  {label}</a>
+        } else
+            display =  <a><span>&nbsp; &nbsp; &nbsp; {label}</span></a>
+
+
         return (
             <li
                 key={index}
                 value={value}
                 onClick={() => this.chooseItem(label)}
             >
-                <a>{label}</a>
+                {display}
             </li>
         )
     }
@@ -71,7 +78,7 @@ class Dropdown extends Component {
         return (
             <div className={`dropdown ${this.state.isOpen ? 'open' : ''}`}>
                 <button className="dropdown-toggle" type="button" onClick={this.showDropdown}>
-                    {this.state.labelItem}
+                    {this.props.labelText || ""} <b>{this.state.labelItem}</b>
                 </button>
                 <ul className="dropdown-menu">
                     {list.map(this.renderDataDropDown)}

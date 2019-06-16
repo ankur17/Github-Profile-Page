@@ -3,8 +3,8 @@
  */
 
 import React , {Component} from 'react';
-import {Dropdown} from 'react-bootstrap'
 import fork from './../Styles/fork.svg'
+import DropDownButton from './Helpers/DropDownButton'
 
 const LanguageDotMap = {
     "JavaScript" : "yellow",
@@ -12,6 +12,9 @@ const LanguageDotMap = {
     "CSS" : "purple",
     "Java" : "brown"
 }
+
+const LANGUAGE = ["All", "JavaScript", "HTML", "CSS" ,"Java"]
+const REPO_TYPE = ["All", "Sources", "Fork", "Archived", "Mirrors"]
 
 class RightPanel extends Component {
     constructor(props){
@@ -25,8 +28,6 @@ class RightPanel extends Component {
             repoDataFetched : false,
             searchText : ""
         }
-        this.toggleClass = this.toggleClass.bind(this)
-        this.toggleTypeClass = this.toggleTypeClass.bind(this)
         this.selectLanguage= this.selectLanguage.bind(this)
         this.selectType= this.selectType.bind(this)
         this.bhatkanFunction= this.bhatkanFunction.bind(this)
@@ -98,19 +99,6 @@ class RightPanel extends Component {
         })
     }
 
-
-    toggleClass(){
-        this.setState({
-            classLang : "show"
-        })
-    }
-
-    toggleTypeClass(){
-        this.setState({
-            classType : "show2"
-        })
-    }
-
     selectLanguage(lang){
         this.setState({
             classLang : "dropdown-content",
@@ -174,6 +162,15 @@ class RightPanel extends Component {
         })
     }
 
+    resetFilter(context){
+        context.setState({
+            searchText : "",
+            language : "All",
+            type : "All",
+        })
+
+    }
+
 
     render(){
         let ss = "";
@@ -195,7 +192,7 @@ class RightPanel extends Component {
                         <p>Repositories</p>
                     </div>
                     <div className="buttonComponent">
-                        <p>Stars</p>
+                        <p>Starss</p>
                     </div>
                     <div className="buttonComponent">
                         <p>Followers</p>
@@ -206,39 +203,27 @@ class RightPanel extends Component {
 
                 </div>
 
-                <div className="queryContainer">
 
-                    <input type="text" placeholder="Search Repositories..." className="searchBox" value={this.state.searchText} onChange={this.setSearchText}/>
 
-                    {/*Type*/}
-                    <button onClick={this.toggleTypeClass} className="dropbtn">{`Type : ${this.state.type}`}</button>
-                    <div className={`bigger ${ss2}`} onClick={this.bhatkanFunction}>
-                        <div id="myDropdown" className={"show2"}>
-                            <a onClick={()=>this.selectType("All")}>All</a>
-                            <a onClick={()=>this.selectType("Sources")}>Sources</a>
-                            <a onClick={()=>this.selectType("Fork")}>Fork</a>
-                            <a onClick={()=>this.selectType("Archived")}>Archived</a>
-                            <a onClick={()=>this.selectType("Mirrors")}>Mirrors</a>
-                        </div>
+                <div className="queryContainer flatenStyle">
+                    <input className="searchBox" type="text" placeholder="Search Repositories..." value={this.state.searchText} onChange={this.setSearchText}/>
+
+                    <div className="dropdownContainer flatenStyle">
+                        {/*Type*/}
+                        <DropDownButton onClick={this.selectType} list={REPO_TYPE} labelText="Type: "/>
+
+
+                        {/*Languages*/}
+                        <DropDownButton onClick={this.selectLanguage} list={LANGUAGE} labelText="Lang:"/>
                     </div>
 
-                    {/*Languages*/}
-                    <button onClick={this.toggleClass} className="dropbtn">{`Lang : ${this.state.language}`}</button>
-                    <div className={`bigger ${ss}`} onClick={this.bhatkanFunction}>
-                        <div id="myDropdown" className={"show"}>
-                            <a onClick={()=>this.selectLanguage("All")}>All</a>
-                            <a onClick={()=>this.selectLanguage("JavaScript")}>JavaScript</a>
-                            <a onClick={()=>this.selectLanguage("Java")}>Java</a>
-                            <a onClick={()=>this.selectLanguage("Python")}>Python</a>
-                        </div>
-                    </div>
 
                 </div>
 
                 { (resultText.length>0) ?
                     (<div className="resultContainer envelop flatenStyle">
                         <p>{resultText}</p>
-                        <button className="dropbtn">Reset Filter</button>
+                        <button className="dropbtn" onClick={()=>this.resetFilter(this)}>Reset Filter</button>
                     </div>) : null
                 }
 
@@ -250,7 +235,7 @@ class RightPanel extends Component {
 }
 
 
-export default Right;
+export default RightPanel;
 
 
 
@@ -272,19 +257,19 @@ function listComponent(props){
                         <p>{description}</p>
                     </div>
 
-                    <div className="repoStats fuck flatenStyle">
+                    <div className="repoStats flatenStyle">
 
                         { language ?
-                            (<div className="flatenStyle">
+                            (<div className="margin-right flatenStyle">
                                 <span className={`dot ${LanguageDotMap[language]}`}/>&nbsp;{language}
                             </div>) : null }
 
                         { license ?
-                            (<div className="flatenStyle">
+                            (<div className="margin-right flatenStyle">
                                 <img src={fork} style={{width:22,height:22,transform:"translateY(-2px)"}}/>&nbsp;{license && license.name}
                             </div>) : null }
 
-                        <div className="flatenStyle" >
+                        <div className="margin-right flatenStyle" >
                             <p style={{textIndent: 5}}>Updated on {formatDate(pushed_at)}</p>
                         </div>
 
@@ -301,5 +286,3 @@ function listComponent(props){
     )
 }
 
-
-export default RightPanel;

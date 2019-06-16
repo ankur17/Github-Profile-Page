@@ -1,0 +1,32 @@
+
+/*margins*/
+
+.margin-right {
+    margin-right: 15px;
+}
+
+.flatenStyle{
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+
+/*Colors*/
+
+.yellow{
+    background-color: yellow;
+}
+
+.red{
+    background-color: red;
+}
+
+.purple{
+    background-color: purple;
+}
+
+.brown {
+    background-color: brown;
+}

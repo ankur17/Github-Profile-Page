@@ -1,11 +1,15 @@
+@import "palette.css";
+
 .buttonContainer{
     display: flex;
     flex-direction: row;
     height: 55px;
+    overflow-x: auto;
 }
 
 .buttonComponent {
-    width: 15%;
+    margin-right: 10px;
+    padding: 0 10px;
     height: 100%;
     background-color: burlywood;
     border: none;
@@ -14,22 +18,26 @@
     justify-content: center;
     align-items: center;
 }
+
+.buttonComponent:hover{
+    border-bottom: 3px solid #bbbbbb;
+    opacity: 0.8;
+}
 .active{
     font-weight: bold;
     border-bottom: 3px solid orangered;
 }
 
 .queryContainer{
-    display: flex;
-    flex-direction: row;
     height: 80px;
     border-top: 2px solid rgb(209, 213, 218);
     border-bottom: 2px solid rgb(209, 213, 218);
     padding: 15px 0;
+    background-color: yellow;
 }
 
 .searchBox{
-    width: 60%;
+    width: 100%;
     border-radius: 6px;
     padding-left: 8px;
     margin: 5px;
@@ -42,6 +50,39 @@
 }
 
 
+.dropdownContainer{
+    margin-left: 5px;
+    background-color: darkgreen;
+}
+
+
+@media only screen and (max-width : 800px) {
+    .queryContainer{
+        min-height: 130px;
+        width: 100%;
+        display: inline-block;
+        border-top: 2px solid rgb(209, 213, 218);
+        border-bottom: 2px solid rgb(209, 213, 218);
+        padding: 15px 0;
+        background-color: #b07219;
+
+    }
+
+    .searchBox{
+        width: 96%;
+        height: 40px;
+        border-radius: 6px;
+        padding-left: 8px;
+        margin: 5px;
+        border: none;
+    }
+
+    .dropdownContainer{
+        margin-top: 10px;
+    }
+
+}
+
 
 
 .dropbtn {
@@ -53,91 +94,6 @@
 }
 
 
-/*.dropbtn:hover, .dropbtn:focus {*/
-/*background-color: #3e8e41;*/
-/*}*/
-
-
-.dropdown-content {
-    display: none;
-}
-
-.bigger{
-    position: absolute;
-    width: 68%;
-    height: 100%;
-    z-index: 10;
-    pointer-events: auto;
-}
-
-.show {
-    position: absolute;
-    right: 3.8%;
-    top : 48px;
-    width: 20%;
-    background-color: #f1f1f1;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    border-radius: 0 0 10px 10px;
-    z-index: 1;
-}
-
-.show a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    width: 100%;
-    cursor: pointer;
-    border-color: #bbbbbb;
-    border-style: solid;
-    border-width: 1px;
-}
-
-.show2 {
-    position: absolute;
-    left: 57.5%;
-    width: 20%;
-    top : 48px;
-    background-color: #f1f1f1;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    border-radius: 0 0 10px 10px;
-    z-index: 1;
-}
-
-
-.show2 a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    width: 100%;
-    cursor: pointer;
-    border-color: #bbbbbb;
-    border-style: solid;
-    border-width: 1px;
-}
-.dropdown a:hover {background-color: #ddd;}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.flatenStyle{
-    display: flex;
-    flex-direction: row;
-}
 
 .dot{
     height: 12px;
@@ -146,22 +102,6 @@
     position: relative;
     border-radius: 50%;
     display: inline-block;
-}
-
-.yellow{
-    background-color: yellow;
-}
-
-.red{
-    background-color: red;
-}
-
-.purple{
-    background-color: purple;
-}
-
-.brown {
-    background-color: brown;
 }
 
 .repoListContainer {
@@ -225,8 +165,8 @@
 }
 
 
-.fuck {
-    background-color: darkmagenta;
-}
+
+
+
 
 
