@@ -4,6 +4,7 @@
 
 import React , {Component} from 'react';
 import Loading from './Helpers/Loading'
+import {USER_API_URL} from './Helpers/Constants'
 import 'whatwg-fetch'
 
 class LeftPanel extends Component{
@@ -24,9 +25,8 @@ class LeftPanel extends Component{
     }
 
     fetchUserData(){
-        let user_url = "https://api.github.com/users/supreetsingh247"
 
-        fetch(user_url,{
+        fetch(USER_API_URL,{
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'

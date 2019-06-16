@@ -5,7 +5,7 @@
 import React , {Component} from 'react';
 import fork from './../Styles/fork.svg'
 import DropDownButton from './Helpers/DropDownButton'
-import {LanguageDotMap, LANGUAGE, REPO_TYPE, MONTH_STR, formatDate} from './Helpers/Constants'
+import {REPO_API_URL, LANGUAGE, REPO_TYPE} from './Helpers/Constants'
 import {filterList,resultViewDisplay} from './ViewRender'
 import Loading from './Helpers/Loading'
 
@@ -60,9 +60,8 @@ class RightPanel extends Component {
 
 
     fetchRepoData(){
-        let user_url = "https://api.github.com/users/supreetsingh247/repos"
 
-        fetch(user_url,{
+        fetch(REPO_API_URL,{
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -136,7 +135,7 @@ class RightPanel extends Component {
                 { (resultText.length>0) ?
                     (<div className="resultContainer envelop flatenStyle">
                         <p>{resultText}</p>
-                        <button className="dropbtn" onClick={this.resetFilter}>Reset Filter</button>
+                        <button className="dropbtn" onClick={this.resetFilter}><i class="glyphicon glyphicon-remove"></i>Reset Filter</button>
                     </div>) : null
                 }
 

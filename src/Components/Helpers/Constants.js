@@ -3,6 +3,11 @@
  */
 
 
+
+export const REPO_API_URL = "https://api.github.com/users/supreetsingh247/repos"
+
+export const USER_API_URL = "https://api.github.com/users/supreetsingh247"
+
 export const LanguageDotMap = {
     "JavaScript" : "yellow",
     "HTML" : "red",

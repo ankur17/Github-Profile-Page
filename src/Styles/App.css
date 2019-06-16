@@ -1,43 +1,7 @@
-.App {
-
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-
-/*on the left*/
+/*on the left Panel*/
 
 .dataContainer{
   display : flex;
-  background-color: red;
   margin: 0;
   padding: 0 2%;
 }
@@ -47,14 +11,12 @@
 
   width : 25%;
   height: 100%;
-  padding: 0 5%;
+  padding: 0 2%;
   justify-content: center;
 }
 
 .leftContainer .imageContainer{
-  background-color: #61dafb;
   margin-top: 10px;
-
   width: 100%;
 }
 
@@ -88,7 +50,7 @@
   color: rgb(36, 41, 46);
   display: block;
   font-size: 26px;
-  font-weight: 500;
+  font-weight: bold;
   height: 30px;
   line-height: 30px;
   overflow-wrap: break-word;
@@ -111,16 +73,14 @@
   line-height: 24px;
   overflow-wrap: break-word;
   text-size-adjust: 100%;
-  background-color: aqua;
   margin: 0;
   margin-bottom: 10px;
 
 }
 .leftContainerBio{
-  color: #666;
+  color: #24292e;
   font-size: 14px;
-  font-style: normal;
-  font-weight: 150;
+
   text-align: left;
   overflow-wrap: break-word;
   margin: 20px 0;
@@ -149,7 +109,7 @@
 
 .rightContainer{
   width: 75%;
-  background-color:yellow;
+  margin-bottom: 40px;
 }
 
 
@@ -164,13 +124,11 @@
   .leftContainer{
     width : 100%;
     overflow-y: hidden;
-    background-color: orange;
   }
 
   .rightContainer{
     width: 100%;
     overflow-y: hidden;
-    background-color:seagreen;
   }
 
 }
