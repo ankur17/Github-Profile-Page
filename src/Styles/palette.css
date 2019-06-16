@@ -10,6 +10,12 @@
     flex-direction: row;
 }
 
+.centerElement{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
 
 
@@ -29,4 +35,9 @@
 
 .brown {
     background-color: brown;
+}
+
+.grey {
+    background-color: #f3f3f3;
+;
 }

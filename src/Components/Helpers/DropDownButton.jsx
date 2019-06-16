@@ -1,4 +1,4 @@
-import './DropDownButton.css';
+import './../../Styles/DropDownButton.css';
 import React, {Component} from 'react';
 
 class Dropdown extends Component {
@@ -15,6 +15,13 @@ class Dropdown extends Component {
         this.hideDropdown = this.hideDropdown.bind(this)
         this.chooseItem = this.chooseItem.bind(this)
         this.renderDataDropDown = this.renderDataDropDown.bind(this)
+        this.exposedLabelState = this.exposedLabelState.bind(this)
+    }
+
+    exposedLabelState(value){
+        this.setState({
+            labelItem: value
+        });
     }
 
     componentWillMount() {

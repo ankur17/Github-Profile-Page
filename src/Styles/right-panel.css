@@ -164,6 +164,15 @@
     outline: none;
 }
 
+.emptyRepoResult{
+    width: 96%;
+    height: 80px;
+    border-radius: 10px;
+    margin: 2%;
+    border: 1px solid #e1e4e8;
+
+}
+
 
 
 

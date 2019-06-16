@@ -3,7 +3,7 @@
  */
 
 import React , {Component} from 'react';
-// import {fetch as fetchPolyfill} from 'whatwg-fetch'
+import Loading from './Helpers/Loading'
 import 'whatwg-fetch'
 
 class LeftPanel extends Component{
@@ -76,7 +76,7 @@ class LeftPanel extends Component{
         if(this.state.isFetchComplete)
             renderer = this.dataRender(this.state,this.props)
         else
-            renderer = emptyData()
+            renderer = <Loading/>
         return (
             <div className="leftContainer">
 
@@ -87,10 +87,6 @@ class LeftPanel extends Component{
     }
 }
 
-
-function emptyData(){
-    return (<h1>Loding</h1>)
-}
 
 export default LeftPanel;
 

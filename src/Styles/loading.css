@@ -1,0 +1,11 @@
+.loading {
+    height: 200px;
+    align-items: center;
+    text-align: center;
+}
+
+.centerElement{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
