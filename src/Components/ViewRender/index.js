@@ -7,13 +7,13 @@ import fork from './../../Styles/fork.svg'
 import {LanguageDotMap, LANGUAGE, REPO_TYPE, MONTH_STR, formatDate} from './../Helpers/Constants'
 
 export function RepoListView(props){
-    let {name,description,language,id,license,pushed_at} = props;
+    let {name,description,language,id,license,pushed_at,url} = props;
     return (
         <div className="repoListContainer flatenStyle" key={id}>
             <div className="envelop flatenStyle">
 
                 <div className="repoData">
-                    <h3>{name}</h3>
+                    <a href={url} target="_blank"><h3>{name}</h3></a>
                     <div className="repoDescription">
                         <p>{description}</p>
                     </div>
