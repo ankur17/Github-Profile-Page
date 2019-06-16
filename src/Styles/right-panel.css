@@ -54,7 +54,7 @@
 
 
 /*.dropbtn:hover, .dropbtn:focus {*/
-    /*background-color: #3e8e41;*/
+/*background-color: #3e8e41;*/
 /*}*/
 
 
@@ -117,3 +117,116 @@
     border-width: 1px;
 }
 .dropdown a:hover {background-color: #ddd;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.flatenStyle{
+    display: flex;
+    flex-direction: row;
+}
+
+.dot{
+    height: 12px;
+    width: 12px;
+    top: 4px;
+    position: relative;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.yellow{
+    background-color: yellow;
+}
+
+.red{
+    background-color: red;
+}
+
+.purple{
+    background-color: purple;
+}
+
+.brown {
+    background-color: brown;
+}
+
+.repoListContainer {
+    border-top: solid 3px;
+}
+
+.repoData {
+    width: 70%;
+    background-color: cyan;
+}
+
+.repoData h3{
+    color: #0366D6;
+    background-color: #bbbbbb;
+}
+
+.repoStars{
+    width: 30%;
+}
+
+.repoName{
+    color: #0366D6
+}
+
+.envelop{
+    margin: 15px 0;
+    padding: 0 2%;
+    width: 100%;
+}
+
+.repoDescription{
+    background-color: #0366D6;
+    width: 100%;
+}
+
+.repoStars{
+    width: 30%;
+    background-color: darkred;
+}
+
+
+
+.resultContainer{
+    width: 100%;
+    height: 60px;
+    padding-top: 5px;
+    background-color: #0366D6;
+}
+.resultContainer p{
+    width: 80%;
+    font-size: 16px;
+    align-self: center;
+    background-color: darkred;
+}
+
+.resultContainer button{
+    width: 20%;
+    background-color: #b07219;
+    border: none;
+    outline: none;
+}
+
+
+.fuck {
+    background-color: darkmagenta;
+}
+
+
