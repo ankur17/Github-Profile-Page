@@ -1,68 +1,80 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Vedantu Assignment
 
-## Available Scripts
+#### Problem Statement
+(Front-end Developer challenge)
 
-In the project directory, you can run:
+It was required to make a page like github.com -
 
-### `npm start`
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Solution
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+##### Installation
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+npm install
+```
 
-### `npm run build`
+Local Development
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+npm run start
+```
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+Production Deployment
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+npm run build
+```
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+##### Stacks Used
+* ReactJs (pure form, no extra helper modules used)
+* Github (for version controlling)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Boilder Plate : facebook's create-react-app
+<br>
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+##### Javascript/CSS Modules used
+* Vanilla React
+* whatwg-fetch: for fetching data from API
+* Bootstrap : Only for the Glyphicon
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+No Other modules are used.
 
-## Learn More
+##### Custom components
+* DropDown button was custom developed and implemented
+* Search query based on the language, repo type and search text results as well as custom text message for every combinations.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Technical Approach
+----------------------
+The following is the terminology for the development used:
+The Layout is divided onto two panels:
+* Left Panel : consists of the user profile layout
+* Right Panel : consists of Repository list data
 
-### Code Splitting
+##### Features
+* There are few Icons like: fork icon, licence icon etc. are replaced with dummy icon
+* The header bar implementation is not done, as mentioned in the question.
+* There is a bit discrepancy in the font and colors of the page as exact matching palette could not be found. So they were improvised.
+* The page is responsive and the bio section comes on the top in the mobile screen (as asked in the question)
+* The tick icon in the dropdown button in the query section is impllemnted as done in the original github page.
+* The query section (Overview,Repositories,Projects...) is horizontally scrollable as in the original github page.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+The code was done on the _develop_ branch and later merged to the _master_ branch
 
-### Analyzing the Bundle Size
+##### Time management
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+* The Assignment took 6.5hrs to complete. It includes all the research work, code structuring and github setup.
+* I started the project at 5:15 PM and completed till 11:45PM.
+* However the assignment report is not included in the 7.5hrs. The report was prepared at 4:00PM of the next day.
 
-### Making a Progressive Web App
+**Kindly check the git commit list as the proof of the same**
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
 
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+### Conclusion
+----------------------
+* I was able to complete all the tasks mentioned in the question.
+* I successfully build the frontend of the project.
+* I included the deplyment and development scripts for the project.
